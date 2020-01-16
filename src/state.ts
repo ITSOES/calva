@@ -223,6 +223,8 @@ export async function initProjectDir(): Promise<void> {
         for (let projectFile in projectFileNames) {
             const p = path.resolve(rootPath, projectFileNames[projectFile]);
             if (fs.existsSync(p)) {
+                // rootPath = "/Users/oscare/src/liftoff/clj/all";
+                console.log("rootPath", rootPath);
                 cursor.set(PROJECT_DIR_KEY, rootPath);
                 return;
             }
